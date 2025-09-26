@@ -1,7 +1,9 @@
 from rest_framework import viewsets, views
 from rest_framework.response import Response
-from .models import Train, Branding, JobCard, InductionList
-from .serializers import TrainSerializer, BrandingSerializer, JobCardSerializer, InductionListSerializer
+from .models import *
+from .serializers import *
+from rest_framework.views import APIView
+from django.db.models import Count
 
 # InductionList API ViewSet
 class InductionListViewSet(viewsets.ReadOnlyModelViewSet):
@@ -101,4 +103,28 @@ class JobCardViewSet(viewsets.ModelViewSet):
 	queryset = JobCard.objects.all()
 	serializer_class = JobCardSerializer
 
-
+class TotalTrainsAPIView(APIView):
+	def get(self, request):
+		total_trains = Train.objects.count()
+		return Response({"total_trains": total_trains})
+	
+class JobCardBacklogAPIView(APIView):
+    def get(self, request):
+        # Total job cards
+        total_jobcards = JobCard.objects.count()
+        # Severity breakdown
+        severity_counts = (
+            JobCard.objects.values('priority')
+            .annotate(count=Count('id'))
+            .order_by('priority')
+        )
+        severity_dict = {item['priority']: item['count'] for item in severity_counts}
+        return Response({
+            "total_jobcards": total_jobcards,
+            "severity_breakdown": severity_dict
+        })
+	
+class TrainAgeDistributionAPIView(APIView):
+    def get(self, request):
+        odometers = list(Train.objects.values_list('mileage_odometer', flat=True))
+        return Response({"odometers": odometers})
