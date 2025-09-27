@@ -6,265 +6,344 @@ from datetime import datetime
 mock_trains = [
   {
     "id": "KM001",
-    "depotId": "D1",
-    # All certificates in the future (approved)
+    "depotId": "Muttom",
     "certificates": { "stock": "2026-01-01T10:00:00", "signal": "2026-02-01T12:00:00", "telecom": "2026-03-01T08:00:00" },
     "jobCards": { "count": 3, "all": [ { "title": "Brake pad inspection", "priority": "High" }, { "title": "Seat repairs", "priority": "Low" }, { "title": "Passenger display malfunction", "priority": "Medium" } ] },
     "mileage": { "odometer": 132450, "lastService": "2024-01-15" },
-    "branding": { "status": True, "hoursRemaining": 24 , "totalHours": 130},
+    "branding": {
+      "status": True,
+      "hoursRemaining": 24,
+      "totalHours": 130,
+      "endDate": "2025-10-11"
+    },
     "cleaningSlot": True,
-    "crew": { "assigned": True, "driverId": "CR001", "validUntil": "2026-01-01T10:00:00" },
-    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" }
+    "crew": { "assigned": True, "driverId": "CR001", "validUntil": "22/11/25 2359" },
+    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
+    "serviceStatus": "inService",
+    "arrivalTime": "10:25 PM"
   },
   {
     "id": "KM002",
-    "depotId": "D1",
-    # All certificates in the past (not approved)
+    "depotId": "Muttom",
     "certificates": { "stock": "2025-09-25T22:00:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-11-25T23:59:00" },
     "jobCards": { "count": 0, "all": [] },
     "mileage": { "odometer": 140120, "lastService": "2024-01-12" },
-    "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0},
+    "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
     "cleaningSlot": False,
-    "crew": { "assigned": False, "driverId": None, "validUntil": None },
-    "override": { "flag": True, "category": "Maintenance", "reason": "Pre-Emptive Maintenance", "by": "Workshop Staff" }
+    "crew": { "assigned": False, "driverId": "none", "validUntil": "none" },
+    "override": { "flag": True, "category": "Maintenance", "reason": "Pre-Emptive Maintenance", "by": "Workshop Staff" },
+    "serviceStatus": "maintenance",
+    "arrivalTime": "None"
   },
   {
     "id": "KM003",
-    "depotId": "D1",
-    # Mixed: stock in future, signal/telecom in past
+    "depotId": "Muttom",
     "certificates": { "stock": "2026-05-10T18:00:00", "signal": "2026-12-25T23:59:00", "telecom": "2026-11-25T20:00:00" },
     "jobCards": { "count": 2, "all": [ { "title": "HVAC partial failure", "priority": "Medium" }, { "title": "Lighting faults", "priority": "Low" } ] },
     "mileage": { "odometer": 125500, "lastService": "2024-01-18" },
-    "branding": { "status": True, "hoursRemaining": 12 , "totalHours": 110},
+    "branding": {
+      "status": True,
+      "hoursRemaining": 12,
+      "totalHours": 110,
+      "endDate": "2025-10-02"
+    },
     "cleaningSlot": True,
-    "crew": { "assigned": True, "driverId": "CR003", "validUntil": "2026-05-10T18:00:00" },
-    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" }
+    "crew": { "assigned": True, "driverId": "CR003", "validUntil": "22/11/25 1200" },
+    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
+    "serviceStatus": "inService",
+    "arrivalTime": "10:35 PM"
   },
   {
     "id": "KM004",
-    "depotId": "D1",
-    # Mixed: stock in past, signal/telecom in future
+    "depotId": "Muttom",
     "certificates": { "stock": "2026-11-25T23:59:00", "signal": "2026-11-25T23:59:00", "telecom": "2026-12-25T23:59:00" },
     "jobCards": { "count": 1, "all": [ { "title": "Minor cosmetic touch-up", "priority": "Low" } ] },
     "mileage": { "odometer": 138000, "lastService": "2024-01-20" },
-    "branding": { "status": True, "hoursRemaining": 15 , "totalHours": 90},
+    "branding": {
+      "status": True,
+      "hoursRemaining": 15,
+      "totalHours": 90,
+      "endDate": "2025-10-01"
+    },
     "cleaningSlot": False,
-    "crew": { "assigned": True, "driverId": "CR004", "validUntil": "2026-12-25T23:59:00" },
-    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" }
+    "crew": { "assigned": True, "driverId": "CR004", "validUntil": "22/12/25 0900" },
+    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
+    "serviceStatus": "inService",
+    "arrivalTime": "10:20 PM"
   },
   {
     "id": "KM005",
-    "depotId": "D1",
-    # All certificates in the future (approved)
+    "depotId": "Muttom",
     "certificates": { "stock": "2026-10-25T18:00:00", "signal": "2026-12-25T23:59:00", "telecom": "2026-11-25T20:00:00" },
     "jobCards": { "count": 3, "all": [ { "title": "Battery replacement", "priority": "High" }, { "title": "Pantograph wear", "priority": "High" }, { "title": "Door sensor fault", "priority": "Medium" } ] },
     "mileage": { "odometer": 149000, "lastService": "2024-01-12" },
-    "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0},
+    "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
     "cleaningSlot": True,
-    "crew": { "assigned": True, "driverId": "CR005", "validUntil": "2026-10-25T18:00:00" },
-    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" }
+    "crew": { "assigned": True, "driverId": "CR005", "validUntil": "22/11/25 1800" },
+    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
+    "serviceStatus": "inService",
+    "arrivalTime": "10:30 PM"
+  },
+  {
+    "id": "KM006",
+    "depotId": "Muttom",
+    "certificates": { "stock": "22/11/25 2359", "signal": "22/11/25 2359", "telecom": "22/11/25 2359" },
+    "jobCards": { "count": 1, "all": [ { "title": "Seat repairs / broken handles", "priority": "Low" } ] },
+    "mileage": { "odometer": 135500, "lastService": "2024-01-16" },
+    "branding": {
+      "status": True,
+      "hoursRemaining": 6,
+      "totalHours": 80,
+      "endDate": "2025-09-28"
+    },
+    "cleaningSlot": False,
+    "crew": { "assigned": False, "driverId": "none", "validUntil": "none" },
+    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
+    "serviceStatus": "standby",
+    "arrivalTime": "None"
   },
   {
     "id": "KM007",
-    "depotId": "D1",
-  "certificates": { "stock": "2025-09-25T23:59:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-11-25T23:59:00" },
+    "depotId": "Muttom",
+    "certificates": { "stock": "2025-09-25T23:59:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-11-25T23:59:00" },
     "jobCards": { "count": 2, "all": [ { "title": "Lighting failures in cars", "priority": "Medium" }, { "title": "Passenger display malfunction", "priority": "Medium" } ] },
     "mileage": { "odometer": 147200, "lastService": "2024-01-14" },
-    "branding": { "status": True, "hoursRemaining": 4 , "totalHours": 60},
+    "branding": {
+      "status": True,
+      "hoursRemaining": 4,
+      "totalHours": 60,
+      "endDate": "2025-09-28"
+    },
     "cleaningSlot": True,
-  "crew": { "assigned": True, "driverId": "CR007", "validUntil": "2025-09-25T23:59:00" },
-    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" }
+    "crew": { "assigned": True, "driverId": "CR007", "validUntil": "22/09/25 2359" },
+    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
+    "serviceStatus": "inService",
+    "arrivalTime": "10:40 PM"
   },
   {
     "id": "KM008",
-    "depotId": "D1",
-  "certificates": { "stock": "2025-12-25T23:59:00", "signal": "2025-12-25T23:59:00", "telecom": "2025-12-25T23:59:00" },
+    "depotId": "Muttom",
+    "certificates": { "stock": "2025-12-25T23:59:00", "signal": "2025-12-25T23:59:00", "telecom": "2025-12-25T23:59:00" },
     "jobCards": { "count": 0, "all": [] },
     "mileage": { "odometer": 140100, "lastService": "2024-01-19" },
-    "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0},
+    "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
     "cleaningSlot": False,
-  "crew": { "assigned": True, "driverId": "CR008", "validUntil": "2025-12-25T08:00:00" },
-    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" }
+    "crew": { "assigned": True, "driverId": "CR008", "validUntil": "22/12/25 0800" },
+    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
+    "serviceStatus": "standby",
+    "arrivalTime": "None"
   },
   {
     "id": "KM009",
-    "depotId": "D1",
-  "certificates": { "stock": "2025-11-25T23:59:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-09-25T23:59:00" },
+    "depotId": "Muttom",
+    "certificates": { "stock": "2025-11-25T23:59:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-09-25T23:59:00" },
     "jobCards": { "count": 4, "all": [ { "title": "Bogie abnormal noise", "priority": "High" }, { "title": "Pantograph wear", "priority": "High" }, { "title": "CCTV failure", "priority": "High" }, { "title": "Battery near EOL", "priority": "High" } ] },
     "mileage": { "odometer": 151600, "lastService": "2024-01-11" },
-    "branding": { "status": True, "hoursRemaining": 20 , "totalHours": 20},
+    "branding": { "status": True, "hoursRemaining": 20 , "totalHours": 20, "endDate": "2025-12-20"},
     "cleaningSlot": True,
-  "crew": { "assigned": True, "driverId": "CR009", "validUntil": "2022-10-25T06:00:00" },
-    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" }
+    "crew": { "assigned": True, "driverId": "CR009", "validUntil": "22/10/25 0600" },
+    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
+    "serviceStatus": "inService",
+    "arrivalTime": "10:15 PM"
   },
   {
     "id": "KM010",
-    "depotId": "D1",
-  "certificates": { "stock": "2022-11-25T23:59:00", "signal": "2022-11-25T23:59:00", "telecom": "2022-11-25T23:59:00" },
+    "depotId": "Muttom",
+    "certificates": { "stock": "2022-11-25T23:59:00", "signal": "2022-11-25T23:59:00", "telecom": "2022-11-25T23:59:00" },
     "jobCards": { "count": 1, "all": [ { "title": "Minor branding wrap tear", "priority": "Low" } ] },
     "mileage": { "odometer": 142800, "lastService": "2024-01-17" },
-    "branding": { "status": True, "hoursRemaining": 10 , "totalHours": 80},
+    "branding": { "status": True, "hoursRemaining": 10 , "totalHours": 80, "endDate": "2026-02-02"},
     "cleaningSlot": False,
-    "crew": { "assigned": False, "driverId": None, "validUntil": None },
-    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" }
+    "crew": { "assigned": False, "driverId": "none", "validUntil": "none" },
+    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
+    "serviceStatus": "standby",
+    "arrivalTime": "None"
   },
   {
     "id": "KM011",
-    "depotId": "D1",
-  "certificates": { "stock": "2015-09-25T21:00:00", "signal": "2022-11-25T23:59:00", "telecom": "2022-11-25T23:59:00" },
+    "depotId": "Muttom",
+    "certificates": { "stock": "2015-09-25T21:00:00", "signal": "2022-11-25T23:59:00", "telecom": "2022-11-25T23:59:00" },
     "jobCards": { "count": 6, "all": [ { "title": "Brake system fault", "priority": "Critical" }, { "title": "Traction motor failure", "priority": "Critical" }, { "title": "Signalling ATP fault", "priority": "Critical" }, { "title": "Door interlock failure", "priority": "High" }, { "title": "Emergency braking system fault", "priority": "Critical" }, { "title": "Fire suppression fault", "priority": "Critical" } ] },
     "mileage": { "odometer": 154200, "lastService": "2024-01-08" },
-    "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0},
+    "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
     "cleaningSlot": True,
-  "crew": { "assigned": True, "driverId": "CR011", "validUntil": "2022-09-25T23:59:00" },
-    "override": { "flag": True, "category": "Safety", "reason": "Emergency Recall", "by": "Control Room" }
+    "crew": { "assigned": True, "driverId": "CR011", "validUntil": "22/09/25 2359" },
+    "override": { "flag": True, "category": "Safety", "reason": "Emergency Recall", "by": "Control Room" },
+    "serviceStatus": "outOfService",
+    "arrivalTime": "None"
   },
   {
     "id": "KM012",
-    "depotId": "D1",
-  "certificates": { "stock": "2022-11-25T23:59:00", "signal": "2022-12-25T23:59:00", "telecom": "2022-12-25T08:00:00" },
+    "depotId": "Muttom",
+    "certificates": { "stock": "2022-11-25T23:59:00", "signal": "2022-12-25T23:59:00", "telecom": "2022-12-25T08:00:00" },
     "jobCards": { "count": 0, "all": [] },
     "mileage": { "odometer": 137500, "lastService": "2024-01-21" },
-    "branding": { "status": True, "hoursRemaining": 18 , "totalHours": 40},
+    "branding": { "status": True, "hoursRemaining": 18 , "totalHours": 40, "endDate": "2025-11-01"},
     "cleaningSlot": False,
-  "crew": { "assigned": True, "driverId": "CR012", "validUntil": "2022-12-25T23:59:00" },
-    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" }
+    "crew": { "assigned": True, "driverId": "CR012", "validUntil": "22/12/25 2359" },
+    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
+    "serviceStatus": "inService",
+    "arrivalTime": "10:45 PM"
   },
   {
     "id": "KM013",
-    "depotId": "D1",
-  "certificates": { "stock": "2022-11-25T18:00:00", "signal": "2022-12-25T12:00:00", "telecom": "2022-11-25T22:00:00" },
+    "depotId": "Muttom",
+    "certificates": { "stock": "2022-11-25T18:00:00", "signal": "2022-12-25T12:00:00", "telecom": "2022-11-25T22:00:00" },
     "jobCards": { "count": 2, "all": [ { "title": "HVAC service", "priority": "Medium" }, { "title": "Door sensor repair", "priority": "High" } ] },
     "mileage": { "odometer": 131200, "lastService": "2024-01-18" },
-    "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0},
+    "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
     "cleaningSlot": True,
-  "crew": { "assigned": True, "driverId": "CR013", "validUntil": "2022-12-25T18:00:00" },
-    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" }
+    "crew": { "assigned": True, "driverId": "CR013", "validUntil": "22/12/25 1800"},
+    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
+    "serviceStatus": "inService",
+    "arrivalTime": "10:22 PM"
   },
   {
     "id": "KM014",
-    "depotId": "D1",
-  "certificates": { "stock": "2026-05-14T21:00:00", "signal": "2026-05-14T23:59:00", "telecom": "2026-05-14T06:00:00" },
+    "depotId": "Muttom",
+    "certificates": { "stock": "2026-05-14T21:00:00", "signal": "2026-05-14T23:59:00", "telecom": "2026-05-14T06:00:00" },
     "jobCards": { "count": 1, "all": [ { "title": "Wheel alignment check", "priority": "High" } ] },
     "mileage": { "odometer": 128900, "lastService": "2024-01-15" },
-    "branding": { "status": True, "hoursRemaining": 20 , "totalHours": 200},
+    "branding": { "status": True, "hoursRemaining": 20 , "totalHours": 200, "endDate": "2025-11-07"},
     "cleaningSlot": False,
-    "crew": { "assigned": True, "driverId": "CR014", "validUntil": "2026-05-14T23:59:00" },
-    "override": { "flag": True, "category": "Maintenance", "reason": "Deferred Maintenance", "by": "Workshop Staff" }
+    "crew": { "assigned": False, "driverId": "none", "validUntil": "none" },
+    "override": { "flag": True, "category": "Maintenance", "reason": "Deferred Maintenance", "by": "Workshop Staff" },
+    "serviceStatus": "maintenance",
+    "arrivalTime": "None"
   },
   {
     "id": "KM015",
-    "depotId": "D1",
-  "certificates": { "stock": "2025-11-25T23:59:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-12-25T18:00:00" },
+    "depotId": "Muttom",
+    "certificates": { "stock": "2025-11-25T23:59:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-12-25T18:00:00" },
     "jobCards": { "count": 0, "all": [] },
     "mileage": { "odometer": 136400, "lastService": "2024-01-16" },
-    "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0},
+    "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
     "cleaningSlot": True,
-  "crew": { "assigned": True, "driverId": "CR015", "validUntil": "2025-12-25T08:00:00" },
-    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" }
+    "crew": { "assigned": True, "driverId": "CR015", "validUntil": "22/12/25 0800" },
+    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
+    "serviceStatus": "standby",
+    "arrivalTime": "None"
   },
   {
     "id": "KM016",
-    "depotId": "D1",
-  "certificates": { "stock": "2025-11-25T23:59:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-12-25T23:59:00" },
+    "depotId": "Muttom",
+    "certificates": { "stock": "2025-11-25T23:59:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-12-25T23:59:00" },
     "jobCards": { "count": 2, "all": [ { "title": "Brake calibration", "priority": "Medium" }, { "title": "HVAC maintenance", "priority": "Low" } ] },
     "mileage": { "odometer": 142000, "lastService": "2024-01-19" },
-    "branding": { "status": True, "hoursRemaining": 12 , "totalHours": 90},
+    "branding": { "status": True, "hoursRemaining": 12 , "totalHours": 90, "endDate": "2025-10-30"},
     "cleaningSlot": True,
-  "crew": { "assigned": True, "driverId": "CR016", "validUntil": "2025-11-25T18:00:00" },
-    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" }
+    "crew": { "assigned": True, "driverId": "CR016", "validUntil": "22/11/25 1800" },
+    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
+    "serviceStatus": "inService",
+    "arrivalTime": "10:28 PM"
   },
   {
     "id": "KM017",
-    "depotId": "D1",
-  "certificates": { "stock": "2025-11-25T08:00:00", "signal": "2025-12-25T23:59:00", "telecom": "2025-11-25T22:00:00" },
+    "depotId": "Muttom",
+    "certificates": { "stock": "2025-11-25T08:00:00", "signal": "2025-12-25T23:59:00", "telecom": "2025-11-25T22:00:00" },
     "jobCards": { "count": 1, "all": [ { "title": "Door interlock inspection", "priority": "High" } ] },
     "mileage": { "odometer": 150500, "lastService": "2024-01-14" },
-    "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0},
+    "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
     "cleaningSlot": False,
-    "crew": { "assigned": False, "driverId": None, "validUntil": None },
-    "override": { "flag": True, "category": "Operational", "reason": "Special Event Demand", "by": "Operations Manager" }
+    "crew": { "assigned": False, "driverId": "none", "validUntil": "none" },
+    "override": { "flag": True, "category": "Operational", "reason": "Special Event Demand", "by": "Operations Manager" },
+    "serviceStatus": "standby",
+    "arrivalTime": "None"
   },
   {
     "id": "KM018",
-    "depotId": "D1",
-  "certificates": { "stock": "2025-11-25T23:59:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-12-25T23:59:00" },
+    "depotId": "Muttom",
+    "certificates": { "stock": "2025-11-25T23:59:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-12-25T23:59:00" },
     "jobCards": { "count": 0, "all": [] },
     "mileage": { "odometer": 124800, "lastService": "2024-01-21" },
-    "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0},
+    "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
     "cleaningSlot": True,
-  "crew": { "assigned": True, "driverId": "CR018", "validUntil": "2025-12-25T23:59:00" },
-    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" }
+    "crew": { "assigned": True, "driverId": "CR018", "validUntil": "22/12/25 2359" },
+    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
+    "serviceStatus": "standby",
+    "arrivalTime": "None"
   },
   {
     "id": "KM019",
-    "depotId": "D1",
-  "certificates": { "stock": "2025-11-25T18:00:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-12-25T18:00:00" },
+    "depotId": "Muttom",
+    "certificates": { "stock": "2025-11-25T18:00:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-12-25T18:00:00" },
     "jobCards": { "count": 2, "all": [ { "title": "Pantograph inspection", "priority": "High" }, { "title": "Seat repair", "priority": "Low" } ] },
     "mileage": { "odometer": 133500, "lastService": "2024-01-15" },
-    "branding": { "status": True, "hoursRemaining": 10 , "totalHours": 100},
+    "branding": { "status": True, "hoursRemaining": 10 , "totalHours": 100, "endDate": "2025-09-30"},
     "cleaningSlot": True,
-  "crew": { "assigned": True, "driverId": "CR019", "validUntil": "2025-11-25T23:59:00" },
-    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" }
+    "crew": { "assigned": True, "driverId": "CR019", "validUntil": "22/11/25 2359" },
+    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
+    "serviceStatus": "inService",
+    "arrivalTime": "10:33 PM"
   },
   {
     "id": "KM020",
-    "depotId": "D1",
-  "certificates": { "stock": "2025-11-25T23:59:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-11-25T23:59:00" },
+    "depotId": "Muttom",
+    "certificates": { "stock": "2025-11-25T23:59:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-11-25T23:59:00" },
     "jobCards": { "count": 1, "all": [ { "title": "Minor electrical fault", "priority": "Low" } ] },
     "mileage": { "odometer": 145000, "lastService": "2024-01-17" },
-    "branding": { "status": True, "hoursRemaining": 8 , "totalHours": 50},
+    "branding": { "status": True, "hoursRemaining": 8 , "totalHours": 50, "endDate": "2025-10-09"},
     "cleaningSlot": False,
-    "crew": { "assigned": False, "driverId": None, "validUntil": None },
-    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" }
+    "crew": { "assigned": False, "driverId": "none", "validUntil": "none" },
+    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
+    "serviceStatus": "standby",
+    "arrivalTime": "None"
   },
   {
     "id": "KM021",
-    "depotId": "D1",
-  "certificates": { "stock": "2025-12-25T23:59:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-12-25T23:59:00" },
+    "depotId": "Muttom",
+    "certificates": { "stock": "2025-12-25T23:59:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-12-25T23:59:00" },
     "jobCards": { "count": 3, "all": [ { "title": "Brake pad replacement", "priority": "High" }, { "title": "HVAC check", "priority": "Medium" }, { "title": "Lighting repair", "priority": "Low" } ] },
     "mileage": { "odometer": 139000, "lastService": "2024-01-18" },
-    "branding": { "status": True, "hoursRemaining": 16 , "totalHours": 150},
+    "branding": { "status": True, "hoursRemaining": 16 , "totalHours": 150, "endDate": "2026-04-20"},
     "cleaningSlot": True,
-  "crew": { "assigned": True, "driverId": "CR021", "validUntil": "2025-12-25T12:00:00" },
-    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" }
+    "crew": { "assigned": True, "driverId": "CR021", "validUntil": "22/12/25 1200" },
+    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
+    "serviceStatus": "inService",
+    "arrivalTime": "10:38 PM"
   },
   {
     "id": "KM022",
-    "depotId": "D1",
-  "certificates": { "stock": "2022-11-25T23:59:00", "signal": "2022-11-25T23:59:00", "telecom": "2022-11-25T23:59:00" },
+    "depotId": "Muttom",
+    "certificates": { "stock": "2022-11-25T23:59:00", "signal": "2022-11-25T23:59:00", "telecom": "2022-11-25T23:59:00" },
     "jobCards": { "count": 0, "all": [] },
     "mileage": { "odometer": 128500, "lastService": "2024-01-19" },
-    "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0},
+    "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
     "cleaningSlot": True,
-    "crew": { "assigned": False, "driverId": None, "validUntil": None },
-    "override": { "flag": True, "category": "Operational", "reason": "Service Pattern Change", "by": "Operations Manager" }
+    "crew": { "assigned": False, "driverId": "none", "validUntil": "none" },
+    "override": { "flag": True, "category": "Operational", "reason": "Service Pattern Change", "by": "Operations Manager" },
+    "serviceStatus": "standby",
+    "arrivalTime": "None"
   },
   {
     "id": "KM023",
-    "depotId": "D1",
-  "certificates": { "stock": "2022-11-25T08:00:00", "signal": "2022-12-25T23:59:00", "telecom": "2022-12-25T18:00:00" },
+    "depotId": "Muttom",
+    "certificates": { "stock": "2022-11-25T08:00:00", "signal": "2022-12-25T23:59:00", "telecom": "2022-12-25T18:00:00" },
     "jobCards": { "count": 2, "all": [ { "title": "HVAC filter replacement", "priority": "Medium" }, { "title": "Pantograph lubrication", "priority": "High" } ] },
     "mileage": { "odometer": 136200, "lastService": "2024-01-14" },
-    "branding": { "status": True, "hoursRemaining": 12 , "totalHours": 20},
+    "branding": { "status": True, "hoursRemaining": 12 , "totalHours": 20, "endDate": "2026-11-29"},
     "cleaningSlot": False,
-  "crew": { "assigned": True, "driverId": "CR023", "validUntil": "2022-12-25T08:00:00" },
-    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" }
+    "crew": { "assigned": True, "driverId": "CR023", "validUntil": "22/12/25 0800" },
+    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
+    "serviceStatus": "inService",
+    "arrivalTime": "10:17 PM"
   },
   {
     "id": "KM024",
-    "depotId": "D1",
-  "certificates": { "stock": "2025-01-25T23:59:00", "signal": "2025-01-25T23:59:00", "telecom": "2025-02-25T23:59:00" },
+    "depotId": "Muttom",
+    "certificates": { "stock": "2025-01-25T23:59:00", "signal": "2025-01-25T23:59:00", "telecom": "2025-02-25T23:59:00" },
     "jobCards": { "count": 1, "all": [ { "title": "Minor door alignment", "priority": "Low" } ] },
     "mileage": { "odometer": 130400, "lastService": "2024-01-16" },
-    "branding": { "status": True, "hoursRemaining": 8 , "totalHours": 180},
+    "branding": { "status": True, "hoursRemaining": 8 , "totalHours": 180, "endDate": "2026-07-01"},
     "cleaningSlot": True,
-  "crew": { "assigned": True, "driverId": "CR024", "validUntil": "2022-12-25T23:59:00" },
-    "override": { "flag": False, "category": "None", "reason": "None", "by": "None"}
+    "crew": { "assigned": True, "driverId": "CR024", "validUntil": "22/12/25 2359" },
+    "override": { "flag": False, "category": "None", "reason": "None", "by": "None"},
+    "serviceStatus": "inService",
+    "arrivalTime": "10:42 PM"
   },
   {
     "id": "KM0025",
-    "depotId": "D1",
+    "depotId": "Muttom",
     "certificates": {
       "stock": "2022-10-25T23:59:00",
       "signal": "2022-11-25T08:00:00",
@@ -278,10 +357,12 @@ mock_trains = [
       ]
     },
     "mileage": { "odometer": 148200, "lastService": "2024-01-10" },
-    "branding": { "status": True, "hoursRemaining": 18 , "totalHours": 110},
+    "branding": { "status": True, "hoursRemaining": 18 , "totalHours": 110, "endDate": "2026-01-22"},
     "cleaningSlot": True,
-  "crew": { "assigned": True, "driverId": "CR125", "validUntil": "2022-11-25T23:59:00" },
-    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" }
+    "crew": { "assigned": True, "driverId": "CR125", "validUntil": "22/11/25 2359" },
+    "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
+    "serviceStatus": "inService",
+    "arrivalTime": "10:19 PM"
   }
 ]
 
@@ -510,15 +591,17 @@ class Command(BaseCommand):
       )
 
       t = Train.objects.create(
-        train_id=train['id'],
-        depot_id=train['depotId'],
-        certificates=certificates,
-        branding=branding,
-        cleaning_slot=train['cleaningSlot'],
-        crew=crew,
-        override=override,
-        mileage_odometer=train['mileage']['odometer'],
-        mileage_last_service=datetime.strptime(train['mileage']['lastService'], '%Y-%m-%d').date(),
+          train_id=train['id'],
+          depot_id=train['depotId'],
+          certificates=certificates,
+          branding=branding,
+          cleaning_slot=train['cleaningSlot'],
+          crew=crew,
+          override=override,
+          mileage_odometer=train['mileage']['odometer'],
+          mileage_last_service=datetime.strptime(train['mileage']['lastService'], '%Y-%m-%d').date(),
+          service_status=train.get('serviceStatus'),
+          arrival_time=train.get('arrivalTime'),
       )
 
       for job in train['jobCards']['all']:

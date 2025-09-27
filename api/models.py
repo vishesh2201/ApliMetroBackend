@@ -15,6 +15,7 @@ class Branding(models.Model):
 	status = models.BooleanField()
 	hours_remaining = models.IntegerField()
 	total_hours = models.IntegerField(default=0)
+	end_date = models.DateField(null=True, blank=True)
 
 	def __str__(self):
 		return f"Status: {self.status}, Hours: {self.hours_remaining}"
@@ -48,9 +49,10 @@ class Train(models.Model):
 	cleaning_slot = models.BooleanField()
 	crew = models.OneToOneField(Crew, on_delete=models.CASCADE, related_name='train', null=True, blank=True)
 	override = models.OneToOneField(Override, on_delete=models.CASCADE, related_name='train', null=True, blank=True)
-	# Mileage as fields
 	mileage_odometer = models.IntegerField()
 	mileage_last_service = models.DateField()
+	service_status = models.CharField(max_length=32, null=True, blank=True)
+	arrival_time = models.CharField(max_length=16, null=True, blank=True)
 
 	def __str__(self):
 		return self.train_id
