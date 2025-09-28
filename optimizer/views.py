@@ -15,6 +15,7 @@ def run_optimizer(request):
         except Exception as e:
             return JsonResponse({'error': 'Invalid JSON', 'details': str(e)}, status=400)
         # Run optimizer on the received data
+        print("Received data for optimization:", data)
         result = process_train_dataset(data)
         # TODO: Save result to the database as needed
         return JsonResponse(result, safe=False)

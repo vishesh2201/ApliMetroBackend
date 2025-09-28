@@ -17,7 +17,7 @@ mock_trains = [
       "endDate": "2025-10-11"
     },
     "cleaningSlot": True,
-    "crew": { "assigned": True, "driverId": "CR001", "validUntil": "22/11/25 2359" },
+    "crew": { "assigned": True, "driverId": "CR001", "validUntil": "2026-01-01T10:00:00" },
     "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
     "serviceStatus": "inService",
     "arrivalTime": "10:25 PM"
@@ -30,9 +30,9 @@ mock_trains = [
     "mileage": { "odometer": 140120, "lastService": "2024-01-12" },
     "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
     "cleaningSlot": False,
-    "crew": { "assigned": False, "driverId": "none", "validUntil": "none" },
-    "override": { "flag": True, "category": "Maintenance", "reason": "Pre-Emptive Maintenance", "by": "Workshop Staff" },
-    "serviceStatus": "maintenance",
+    "crew": { "assigned": False, "driverId": "None", "validUntil": "None" },
+    "override": { "flag": True, "category": "inService", "reason": "Pre-Emptive inService", "by": "Workshop Staff" },
+    "serviceStatus": "inService",
     "arrivalTime": "None"
   },
   {
@@ -48,7 +48,7 @@ mock_trains = [
       "endDate": "2025-10-02"
     },
     "cleaningSlot": True,
-    "crew": { "assigned": True, "driverId": "CR003", "validUntil": "22/11/25 1200" },
+    "crew": { "assigned": True, "driverId": "CR003", "validUntil": "2025-11-10T18:00:00"},
     "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
     "serviceStatus": "inService",
     "arrivalTime": "10:35 PM"
@@ -66,7 +66,7 @@ mock_trains = [
       "endDate": "2025-10-01"
     },
     "cleaningSlot": False,
-    "crew": { "assigned": True, "driverId": "CR004", "validUntil": "22/12/25 0900" },
+    "crew": { "assigned": True, "driverId": "CR004", "validUntil": "2026-12-25T23:59:00" },
     "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
     "serviceStatus": "inService",
     "arrivalTime": "10:20 PM"
@@ -79,7 +79,7 @@ mock_trains = [
     "mileage": { "odometer": 149000, "lastService": "2024-01-12" },
     "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
     "cleaningSlot": True,
-    "crew": { "assigned": True, "driverId": "CR005", "validUntil": "22/11/25 1800" },
+    "crew": { "assigned": True, "driverId": "CR005", "validUntil": "2026-12-25T23:59:00" },
     "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
     "serviceStatus": "inService",
     "arrivalTime": "10:30 PM"
@@ -87,7 +87,7 @@ mock_trains = [
   {
     "id": "KM006",
     "depotId": "Muttom",
-    "certificates": { "stock": "22/11/25 2359", "signal": "22/11/25 2359", "telecom": "22/11/25 2359" },
+    "certificates": { "stock": "2025-11-25T23:59:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-11-25T23:59:00" },
     "jobCards": { "count": 1, "all": [ { "title": "Seat repairs / broken handles", "priority": "Low" } ] },
     "mileage": { "odometer": 135500, "lastService": "2024-01-16" },
     "branding": {
@@ -97,9 +97,9 @@ mock_trains = [
       "endDate": "2025-09-28"
     },
     "cleaningSlot": False,
-    "crew": { "assigned": False, "driverId": "none", "validUntil": "none" },
+    "crew": { "assigned": True, "driverId": "CR006", "validUntil": "2026-12-25T23:59:00" },
     "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
-    "serviceStatus": "standby",
+    "serviceStatus": "inService",
     "arrivalTime": "None"
   },
   {
@@ -115,7 +115,7 @@ mock_trains = [
       "endDate": "2025-09-28"
     },
     "cleaningSlot": True,
-    "crew": { "assigned": True, "driverId": "CR007", "validUntil": "22/09/25 2359" },
+    "crew": { "assigned": True, "driverId": "CR007", "validUntil": "2025-012-25T23:59:00" },
     "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
     "serviceStatus": "inService",
     "arrivalTime": "10:40 PM"
@@ -128,9 +128,9 @@ mock_trains = [
     "mileage": { "odometer": 140100, "lastService": "2024-01-19" },
     "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
     "cleaningSlot": False,
-    "crew": { "assigned": True, "driverId": "CR008", "validUntil": "22/12/25 0800" },
+    "crew": { "assigned": True, "driverId": "CR008", "validUntil": "2025-12-25T08:00:00" },
     "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
-    "serviceStatus": "standby",
+    "serviceStatus": "inService",
     "arrivalTime": "None"
   },
   {
@@ -141,7 +141,7 @@ mock_trains = [
     "mileage": { "odometer": 151600, "lastService": "2024-01-11" },
     "branding": { "status": True, "hoursRemaining": 20 , "totalHours": 20, "endDate": "2025-12-20"},
     "cleaningSlot": True,
-    "crew": { "assigned": True, "driverId": "CR009", "validUntil": "22/10/25 0600" },
+    "crew": { "assigned": True, "driverId": "CR009", "validUntil": "2025-10-25T06:00:00"  },
     "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
     "serviceStatus": "inService",
     "arrivalTime": "10:15 PM"
@@ -154,9 +154,9 @@ mock_trains = [
     "mileage": { "odometer": 142800, "lastService": "2024-01-17" },
     "branding": { "status": True, "hoursRemaining": 10 , "totalHours": 80, "endDate": "2026-02-02"},
     "cleaningSlot": False,
-    "crew": { "assigned": False, "driverId": "none", "validUntil": "none" },
+    "crew": { "assigned": False, "driverId": "None", "validUntil": "None" },
     "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
-    "serviceStatus": "standby",
+    "serviceStatus": "inService",
     "arrivalTime": "None"
   },
   {
@@ -167,7 +167,7 @@ mock_trains = [
     "mileage": { "odometer": 154200, "lastService": "2024-01-08" },
     "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
     "cleaningSlot": True,
-    "crew": { "assigned": True, "driverId": "CR011", "validUntil": "22/09/25 2359" },
+    "crew": { "assigned": True, "driverId": "CR011", "validUntil": "2026-09-30T23:59:00" },
     "override": { "flag": True, "category": "Safety", "reason": "Emergency Recall", "by": "Control Room" },
     "serviceStatus": "outOfService",
     "arrivalTime": "None"
@@ -180,7 +180,7 @@ mock_trains = [
     "mileage": { "odometer": 137500, "lastService": "2024-01-21" },
     "branding": { "status": True, "hoursRemaining": 18 , "totalHours": 40, "endDate": "2025-11-01"},
     "cleaningSlot": False,
-    "crew": { "assigned": True, "driverId": "CR012", "validUntil": "22/12/25 2359" },
+    "crew": { "assigned": True, "driverId": "CR012", "validUntil": "2026-12-01T23:59:00" },
     "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
     "serviceStatus": "inService",
     "arrivalTime": "10:45 PM"
@@ -193,7 +193,7 @@ mock_trains = [
     "mileage": { "odometer": 131200, "lastService": "2024-01-18" },
     "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
     "cleaningSlot": True,
-    "crew": { "assigned": True, "driverId": "CR013", "validUntil": "22/12/25 1800"},
+    "crew": { "assigned": True, "driverId": "CR013", "validUntil": "2025-12-08T18:00:00" },
     "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
     "serviceStatus": "inService",
     "arrivalTime": "10:22 PM"
@@ -206,9 +206,9 @@ mock_trains = [
     "mileage": { "odometer": 128900, "lastService": "2024-01-15" },
     "branding": { "status": True, "hoursRemaining": 20 , "totalHours": 200, "endDate": "2025-11-07"},
     "cleaningSlot": False,
-    "crew": { "assigned": False, "driverId": "none", "validUntil": "none" },
-    "override": { "flag": True, "category": "Maintenance", "reason": "Deferred Maintenance", "by": "Workshop Staff" },
-    "serviceStatus": "maintenance",
+    "crew": { "assigned": False, "driverId": "None", "validUntil": "None" },
+    "override": { "flag": True, "category": "inService", "reason": "Deferred inService", "by": "Workshop Staff" },
+    "serviceStatus": "inService",
     "arrivalTime": "None"
   },
   {
@@ -219,20 +219,20 @@ mock_trains = [
     "mileage": { "odometer": 136400, "lastService": "2024-01-16" },
     "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
     "cleaningSlot": True,
-    "crew": { "assigned": True, "driverId": "CR015", "validUntil": "22/12/25 0800" },
+    "crew": { "assigned": True, "driverId": "CR015", "validUntil": "2025-11-25T08:00:00"  },
     "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
-    "serviceStatus": "standby",
+    "serviceStatus": "inService",
     "arrivalTime": "None"
   },
   {
     "id": "KM016",
     "depotId": "Muttom",
     "certificates": { "stock": "2025-11-25T23:59:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-12-25T23:59:00" },
-    "jobCards": { "count": 2, "all": [ { "title": "Brake calibration", "priority": "Medium" }, { "title": "HVAC maintenance", "priority": "Low" } ] },
+    "jobCards": { "count": 2, "all": [ { "title": "Brake calibration", "priority": "Medium" }, { "title": "HVAC inService", "priority": "Low" } ] },
     "mileage": { "odometer": 142000, "lastService": "2024-01-19" },
     "branding": { "status": True, "hoursRemaining": 12 , "totalHours": 90, "endDate": "2025-10-30"},
     "cleaningSlot": True,
-    "crew": { "assigned": True, "driverId": "CR016", "validUntil": "22/11/25 1800" },
+    "crew": { "assigned": True, "driverId": "CR016", "validUntil": "2025-11-25T22:00:00" },
     "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
     "serviceStatus": "inService",
     "arrivalTime": "10:28 PM"
@@ -245,9 +245,9 @@ mock_trains = [
     "mileage": { "odometer": 150500, "lastService": "2024-01-14" },
     "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
     "cleaningSlot": False,
-    "crew": { "assigned": False, "driverId": "none", "validUntil": "none" },
+    "crew": { "assigned": False, "driverId": "None", "validUntil": "None" },
     "override": { "flag": True, "category": "Operational", "reason": "Special Event Demand", "by": "Operations Manager" },
-    "serviceStatus": "standby",
+    "serviceStatus": "inService",
     "arrivalTime": "None"
   },
   {
@@ -258,9 +258,9 @@ mock_trains = [
     "mileage": { "odometer": 124800, "lastService": "2024-01-21" },
     "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
     "cleaningSlot": True,
-    "crew": { "assigned": True, "driverId": "CR018", "validUntil": "22/12/25 2359" },
+    "crew": { "assigned": True, "driverId": "CR018", "validUntil": "2025-10-25T23:59:00" },
     "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
-    "serviceStatus": "standby",
+    "serviceStatus": "inService",
     "arrivalTime": "None"
   },
   {
@@ -271,7 +271,7 @@ mock_trains = [
     "mileage": { "odometer": 133500, "lastService": "2024-01-15" },
     "branding": { "status": True, "hoursRemaining": 10 , "totalHours": 100, "endDate": "2025-09-30"},
     "cleaningSlot": True,
-    "crew": { "assigned": True, "driverId": "CR019", "validUntil": "22/11/25 2359" },
+    "crew": { "assigned": True, "driverId": "CR019", "validUntil": "2025-11-25T23:59:00" },
     "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
     "serviceStatus": "inService",
     "arrivalTime": "10:33 PM"
@@ -284,9 +284,9 @@ mock_trains = [
     "mileage": { "odometer": 145000, "lastService": "2024-01-17" },
     "branding": { "status": True, "hoursRemaining": 8 , "totalHours": 50, "endDate": "2025-10-09"},
     "cleaningSlot": False,
-    "crew": { "assigned": False, "driverId": "none", "validUntil": "none" },
+    "crew": { "assigned": False, "driverId": "None", "validUntil": "None" },
     "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
-    "serviceStatus": "standby",
+    "serviceStatus": "inService",
     "arrivalTime": "None"
   },
   {
@@ -297,7 +297,7 @@ mock_trains = [
     "mileage": { "odometer": 139000, "lastService": "2024-01-18" },
     "branding": { "status": True, "hoursRemaining": 16 , "totalHours": 150, "endDate": "2026-04-20"},
     "cleaningSlot": True,
-    "crew": { "assigned": True, "driverId": "CR021", "validUntil": "22/12/25 1200" },
+    "crew": { "assigned": True, "driverId": "CR021", "validUntil":"2025-11-01T23:59:00"},
     "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
     "serviceStatus": "inService",
     "arrivalTime": "10:38 PM"
@@ -310,9 +310,9 @@ mock_trains = [
     "mileage": { "odometer": 128500, "lastService": "2024-01-19" },
     "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
     "cleaningSlot": True,
-    "crew": { "assigned": False, "driverId": "none", "validUntil": "none" },
+    "crew": { "assigned": True, "driverId": "CR022", "validUntil":"2025-11-01T23:59:00"},
     "override": { "flag": True, "category": "Operational", "reason": "Service Pattern Change", "by": "Operations Manager" },
-    "serviceStatus": "standby",
+    "serviceStatus": "inService",
     "arrivalTime": "None"
   },
   {
@@ -323,7 +323,7 @@ mock_trains = [
     "mileage": { "odometer": 136200, "lastService": "2024-01-14" },
     "branding": { "status": True, "hoursRemaining": 12 , "totalHours": 20, "endDate": "2026-11-29"},
     "cleaningSlot": False,
-    "crew": { "assigned": True, "driverId": "CR023", "validUntil": "22/12/25 0800" },
+    "crew": { "assigned": True, "driverId": "CR023", "validUntil": "2025-12-08T23:59:00" },
     "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
     "serviceStatus": "inService",
     "arrivalTime": "10:17 PM"
@@ -336,13 +336,13 @@ mock_trains = [
     "mileage": { "odometer": 130400, "lastService": "2024-01-16" },
     "branding": { "status": True, "hoursRemaining": 8 , "totalHours": 180, "endDate": "2026-07-01"},
     "cleaningSlot": True,
-    "crew": { "assigned": True, "driverId": "CR024", "validUntil": "22/12/25 2359" },
+    "crew": { "assigned": True, "driverId": "CR024", "validUntil": "2025-12-25T23:59:00"},
     "override": { "flag": False, "category": "None", "reason": "None", "by": "None"},
     "serviceStatus": "inService",
     "arrivalTime": "10:42 PM"
   },
   {
-    "id": "KM0025",
+    "id": "KM025",
     "depotId": "Muttom",
     "certificates": {
       "stock": "2022-10-25T23:59:00",
@@ -359,7 +359,7 @@ mock_trains = [
     "mileage": { "odometer": 148200, "lastService": "2024-01-10" },
     "branding": { "status": True, "hoursRemaining": 18 , "totalHours": 110, "endDate": "2026-01-22"},
     "cleaningSlot": True,
-    "crew": { "assigned": True, "driverId": "CR125", "validUntil": "22/11/25 2359" },
+    "crew": { "assigned": True, "driverId": "CR125", "validUntil": "2025-11-25T23:59:00" },
     "override": { "flag": False, "category": "None", "reason": "None", "by": "None" },
     "serviceStatus": "inService",
     "arrivalTime": "10:19 PM"
