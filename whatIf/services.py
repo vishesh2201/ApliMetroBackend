@@ -7,7 +7,7 @@ from mistralai import Mistral  # adapt import if needed
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from optimizer.services import compute_scores, generate_explanation
+from optimizer.services import compute_scores, generate_explanation, generate_explanation_sync
 
 def force_json(text: str) -> dict:
     # Replace Python booleans/None with JSON equivalents
@@ -80,11 +80,22 @@ def simulate_train_scenario(train_id: str, scenario_text: str, train_data: list)
     print("train_score: ", train_score)
 
     # 4. Generate explanation
-    explanation = generate_explanation(train_score, [updated_train])
+    for depot_id, depot_data in depot_results.items():
+        for train in depot_data['trains']:
+            try:
+                explanation_result = generate_explanation_sync(train, [train_data])
+                print(f"    English: {explanation_result.get('english', 'N/A')}")
+                print(f"    Malayalam: {explanation_result.get('malayalam', 'N/A')}")
+                print(f"    Timestamp: {explanation_result.get('timestamp', 'N/A')}")
+                train['explanation'] = f"{explanation_result.get('english', 'N/A')}\n{explanation_result.get('malayalam', 'N/A')}"
+            except Exception as e:
+                print(f"    Explanation Error: {e}")
+                print("explanation result:" , explanation_result)
+            print()
 
 
     return {
         "updated_train": updated_train,
         "score": train_score,
-        "explanation": explanation
+        "explanation": f"{explanation_result['english']} + { explanation_result['malayalam']}"
     }

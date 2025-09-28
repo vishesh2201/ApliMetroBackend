@@ -25,7 +25,7 @@ mock_trains = [
   {
     "id": "KM002",
     "depotId": "Muttom",
-    "certificates": { "stock": "2025-09-25T22:00:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-11-25T23:59:00" },
+    "certificates": { "stock": "2025-10-25T22:00:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-11-25T23:59:00" },
     "jobCards": { "count": 0, "all": [] },
     "mileage": { "odometer": 140120, "lastService": "2024-01-12" },
     "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
@@ -162,7 +162,7 @@ mock_trains = [
   {
     "id": "KM011",
     "depotId": "Muttom",
-    "certificates": { "stock": "2015-09-25T21:00:00", "signal": "2022-11-25T23:59:00", "telecom": "2022-11-25T23:59:00" },
+    "certificates": { "stock": "2025-12-25T21:00:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-11-25T23:59:00" },
     "jobCards": { "count": 6, "all": [ { "title": "Brake system fault", "priority": "Critical" }, { "title": "Traction motor failure", "priority": "Critical" }, { "title": "Signalling ATP fault", "priority": "Critical" }, { "title": "Door interlock failure", "priority": "High" }, { "title": "Emergency braking system fault", "priority": "Critical" }, { "title": "Fire suppression fault", "priority": "Critical" } ] },
     "mileage": { "odometer": 154200, "lastService": "2024-01-08" },
     "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
@@ -175,7 +175,7 @@ mock_trains = [
   {
     "id": "KM012",
     "depotId": "Muttom",
-    "certificates": { "stock": "2022-11-25T23:59:00", "signal": "2022-12-25T23:59:00", "telecom": "2022-12-25T08:00:00" },
+    "certificates": { "stock": "2025-12-25T21:00:00", "signal": "2025-11-25T23:59:00", "telecom": "2025-11-25T23:59:00" },
     "jobCards": { "count": 0, "all": [] },
     "mileage": { "odometer": 137500, "lastService": "2024-01-21" },
     "branding": { "status": True, "hoursRemaining": 18 , "totalHours": 40, "endDate": "2025-11-01"},
@@ -188,7 +188,7 @@ mock_trains = [
   {
     "id": "KM013",
     "depotId": "Muttom",
-    "certificates": { "stock": "2022-11-25T18:00:00", "signal": "2022-12-25T12:00:00", "telecom": "2022-11-25T22:00:00" },
+    "certificates": { "stock": "2025-12-25T18:00:00", "signal": "2025-12-25T12:00:00", "telecom": "2025-12-25T22:00:00" },
     "jobCards": { "count": 2, "all": [ { "title": "HVAC service", "priority": "Medium" }, { "title": "Door sensor repair", "priority": "High" } ] },
     "mileage": { "odometer": 131200, "lastService": "2024-01-18" },
     "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
@@ -305,7 +305,7 @@ mock_trains = [
   {
     "id": "KM022",
     "depotId": "Muttom",
-    "certificates": { "stock": "2022-11-25T23:59:00", "signal": "2022-11-25T23:59:00", "telecom": "2022-11-25T23:59:00" },
+    "certificates": { "stock": "2026-11-25T23:59:00", "signal": "2022-11-25T23:59:00", "telecom": "2026-11-25T23:59:00" },
     "jobCards": { "count": 0, "all": [] },
     "mileage": { "odometer": 128500, "lastService": "2024-01-19" },
     "branding": { "status": False, "hoursRemaining": 0 , "totalHours": 0, "endDate": "None"},
@@ -318,7 +318,7 @@ mock_trains = [
   {
     "id": "KM023",
     "depotId": "Muttom",
-    "certificates": { "stock": "2022-11-25T08:00:00", "signal": "2022-12-25T23:59:00", "telecom": "2022-12-25T18:00:00" },
+    "certificates": { "stock": "2026-11-25T08:00:00", "signal": "2026-12-25T23:59:00", "telecom": "2026-12-25T18:00:00" },
     "jobCards": { "count": 2, "all": [ { "title": "HVAC filter replacement", "priority": "Medium" }, { "title": "Pantograph lubrication", "priority": "High" } ] },
     "mileage": { "odometer": 136200, "lastService": "2024-01-14" },
     "branding": { "status": True, "hoursRemaining": 12 , "totalHours": 20, "endDate": "2026-11-29"},
@@ -331,7 +331,7 @@ mock_trains = [
   {
     "id": "KM024",
     "depotId": "Muttom",
-    "certificates": { "stock": "2025-01-25T23:59:00", "signal": "2025-01-25T23:59:00", "telecom": "2025-02-25T23:59:00" },
+    "certificates": { "stock": "2026-01-25T23:59:00", "signal": "2026-01-25T23:59:00", "telecom": "2026-02-25T23:59:00" },
     "jobCards": { "count": 1, "all": [ { "title": "Minor door alignment", "priority": "Low" } ] },
     "mileage": { "odometer": 130400, "lastService": "2024-01-16" },
     "branding": { "status": True, "hoursRemaining": 8 , "totalHours": 180, "endDate": "2026-07-01"},
